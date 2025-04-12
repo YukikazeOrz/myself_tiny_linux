@@ -33,6 +33,6 @@ mov r10, rcx
 syscall
 ret
 
-exit:
+_exit:
 mov rax, 60
 syscall
