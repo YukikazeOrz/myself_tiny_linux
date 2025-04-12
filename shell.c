@@ -1,6 +1,8 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+int real_waitid(idtype_t idtype, id_t id, siginfo_t *infop, int options, void*)
+
 int main(){
     char command[255];
     for(;;){write(1, "# ", 2);
@@ -12,8 +14,8 @@ int main(){
             break;
         }else{
             siginfo_t info;
-            waitid(P_ALL, 0, &info, WEXITED);
+            real_waitid(P_ALL, 0, &info, WEXITED, 0);
         }
-        
     }
+    _exit(0);
 }
