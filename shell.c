@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-int real_waitid(idtype_t idtype, id_t id, siginfo_t *infop, int options, void*)
+int real_waitid(idtype_t idtype, id_t id, siginfo_t *infop, int options, void*);
 
 int main(){
     char command[255];
