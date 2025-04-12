@@ -5,6 +5,7 @@
 .global fork
 .global real_waitid
 .global execve
+.global _exit
 
 write:
 mov rax, 1
@@ -31,3 +32,7 @@ mov rax, 247
 mov r10, rcx
 syscall
 ret
+
+exit:
+mov rax, 60
+syscall
